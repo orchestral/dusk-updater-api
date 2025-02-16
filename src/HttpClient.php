@@ -23,8 +23,11 @@ class HttpClient
     public static bool $verifySsl = true;
 
     public function __construct(
-        public Client $client = new Client,
-    ) {}
+        public ?Client $client = new Client,
+    ) {
+
+
+    }
 
     /**
      * Download from URL.
