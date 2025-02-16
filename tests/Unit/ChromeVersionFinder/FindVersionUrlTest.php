@@ -34,7 +34,7 @@ it('can get version', function (?string $given, string $version) {
     ['133', '133.0.6943.98'],
 ]);
 
-it('can get version when version is not a valid `ctype_digit()`', function (?string $given, string $version) {
+it('can get version when given version is not a valid `ctype_digit()`', function (?string $given, string $version) {
     $finder = new ChromeVersionFinder;
 
     expect($finder->findVersionUrl($given))->toBe($version);
