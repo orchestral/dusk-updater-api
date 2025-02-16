@@ -1,6 +1,5 @@
 <?php
 
-
 dataset('chromeDriverBinary', function () {
     yield ['linux', 'chromedriver-linux'];
     yield ['mac', 'chromedriver-mac'];

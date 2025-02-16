@@ -16,7 +16,6 @@ it('has correct os', function () {
     ], OperatingSystem::all());
 });
 
-
 it('can resolve chrome version commands', function () {
     foreach (OperatingSystem::all() as $os) {
         $commands = OperatingSystem::chromeVersionCommands($os);
@@ -48,7 +47,7 @@ it('can resolve chromedriver slug', function (string $version, string $operating
     $this->assertSame($expected, OperatingSystem::chromeDriverSlug($operatingSystem, $version));
 })->with('chromeDriverSlug');
 
-it('cant resolve invalid chromedriver slug', function ()  {
+it('cant resolve invalid chromedriver slug', function () {
     $this->expectException('InvalidArgumentException');
     $this->expectExceptionMessage('Unable to find ChromeDriver slug for Operating System [window_os]');
 
