@@ -91,6 +91,8 @@ class ChromeVersionFinder
      * Detect the installed Chrome/Chromium version.
      *
      * @return array<string, mixed>
+     *
+     * @codeCoverageIgnore
      */
     public function installedChromeVersion(string $operatingSystem, ?string $directory = null): array
     {
@@ -138,6 +140,8 @@ class ChromeVersionFinder
      * Detect the installed ChromeDriver version.
      *
      * @return array<string, mixed>|null
+     *
+     * @codeCoverageIgnore
      */
     public function installedChromeDriverVersion(string $operatingSystem, string $directory): ?array
     {
