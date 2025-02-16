@@ -32,7 +32,7 @@ it('cant resolve invalid chrome version commands', function () {
     OperatingSystem::chromeVersionCommands('window_os');
 });
 
-it('can_resolve_chromedriver_binary', function (string $operatingSystem, string $expected) {
+it('can resolve chromedriver binary', function (string $operatingSystem, string $expected) {
     $this->assertSame($expected, OperatingSystem::chromeDriverBinary($operatingSystem));
 })->with('chromeDriverBinary');
 
