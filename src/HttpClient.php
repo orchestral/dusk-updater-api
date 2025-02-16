@@ -44,7 +44,7 @@ class HttpClient
         ])));
 
         if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299) {
-            throw new Exception(sprintf('Unable to download from [%s]', $url));
+            throw new Exception(\sprintf('Unable to download from [%s]', $url));
         }
     }
 
@@ -64,7 +64,7 @@ class HttpClient
         ])));
 
         if ($response->getStatusCode() < 200 || $response->getStatusCode() > 299) {
-            throw new Exception(sprintf('Unable to fetch contents from [%s]', $url));
+            throw new Exception(\sprintf('Unable to fetch contents from [%s]', $url));
         }
 
         return (string) $response->getBody();

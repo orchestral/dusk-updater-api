@@ -3,7 +3,7 @@
 use Orchestra\DuskUpdaterApi\OperatingSystem;
 
 it('matches possible os', function () {
-    $this->assertTrue(\in_array(OperatingSystem::id(), OperatingSystem::all()));
+    $this->assertTrue(in_array(OperatingSystem::id(), OperatingSystem::all()));
 });
 
 it('has correct os', function () {
@@ -20,7 +20,7 @@ it('can resolve chrome version commands', function () {
     foreach (OperatingSystem::all() as $os) {
         $commands = OperatingSystem::chromeVersionCommands($os);
 
-        $this->assertTrue(\is_array($commands), 'Commands should be an array');
+        $this->assertTrue(is_array($commands), 'Commands should be an array');
         $this->assertFalse(empty($commands), 'Commands should not be empty');
     }
 });

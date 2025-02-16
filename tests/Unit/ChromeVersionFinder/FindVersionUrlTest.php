@@ -56,7 +56,7 @@ it('can get legacy version (43-69)', function (int $given, string $version) {
 it('can get previous version (70-114)', function (int $given, string $version) {
     HttpClient::$instance->shouldReceive('get')
         ->once()
-        ->with(\sprintf('https://chromedriver.storage.googleapis.com/LATEST_RELEASE_%d', $given), ['verify' => true])
+        ->with(sprintf('https://chromedriver.storage.googleapis.com/LATEST_RELEASE_%d', $given), ['verify' => true])
         ->andReturn(new Response(body: (string) $given));
 
     $finder = new ChromeVersionFinder;

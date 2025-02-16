@@ -101,7 +101,7 @@ class ChromeVersionFinder
                 throw new InvalidArgumentException('Chrome version cannot be detected in custom installation path on Windows.');
             }
 
-            $commands = [sprintf('%s --version', escapeshellcmd($directory))];
+            $commands = [\sprintf('%s --version', escapeshellcmd($directory))];
         } else {
             $commands = OperatingSystem::chromeVersionCommands($operatingSystem);
         }
@@ -157,7 +157,7 @@ class ChromeVersionFinder
             ];
         }
 
-        $command = sprintf('%s --version', escapeshellcmd(join_paths(rtrim($directory, DIRECTORY_SEPARATOR), $filename)));
+        $command = \sprintf('%s --version', escapeshellcmd(join_paths(rtrim($directory, DIRECTORY_SEPARATOR), $filename)));
         $process = Process::fromShellCommandline($command);
 
         $process->run();
