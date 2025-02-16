@@ -7,4 +7,9 @@ it('can resolve path using `join_paths()`', function () {
         realpath(__DIR__.'/FunctionsTest.php'),
         join_paths(__DIR__, 'FunctionsTest.php'),
     );
+
+    $this->assertSame(
+        realpath(__DIR__.'/FunctionsTest.php'),
+        join_paths(__DIR__, '', 'FunctionsTest.php'),
+    );
 });
