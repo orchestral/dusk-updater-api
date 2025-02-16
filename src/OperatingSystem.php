@@ -150,11 +150,7 @@ class OperatingSystem
      */
     public static function onMac(): bool
     {
-        if (\defined('PHP_OS_FAMILY')) {
-            return PHP_OS_FAMILY === 'Darwin';
-        }
-
-        return PHP_OS === 'Darwin';
+        return \defined('PHP_OS_FAMILY') ? PHP_OS_FAMILY === 'Darwin' : PHP_OS === 'Darwin';
     }
 
     /**
