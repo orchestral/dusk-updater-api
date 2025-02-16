@@ -143,7 +143,7 @@ class ChromeVersionFinder
     {
         $filename = OperatingSystem::chromeDriverBinary($operatingSystem);
 
-        if (! file_exists($directory.$filename)) {
+        if (! is_file(join_paths($directory, $filename))) {
             return [
                 'full' => null,
                 'semver' => null,
