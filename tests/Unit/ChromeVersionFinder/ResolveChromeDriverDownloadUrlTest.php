@@ -29,4 +29,5 @@ it('can resolve legacy download url', function (string|int $version, string $url
 })->with([
     ['2.44', 'https://chromedriver.storage.googleapis.com/2.44/chromedriver_linux64.zip'],
     ['114', 'https://chromedriver.storage.googleapis.com/114/chromedriver_linux64.zip'],
+    ['133.0.6943.98', 'https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.98/linux64/chromedriver-linux64.zip'],
 ]);
