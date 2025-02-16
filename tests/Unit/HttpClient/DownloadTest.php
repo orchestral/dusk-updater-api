@@ -27,6 +27,17 @@ it('can download a file', function () {
     );
 
     $this->assertFileExists($file);
-
-    unlink($file);
 });
+
+
+it('cannot download an invalid file', function () {
+    HttpClient::$instance->shouldReceive('get')
+        ->with('https://storage.googleapis.com/chrome-for-testing-public/113.0.5672.63/ubuntu64/chrome-ubuntu64.zip', m::type('Array'))
+        ->once()
+        ->andReturn(new Response(status: 404));
+
+    HttpClient::download(
+        'https://storage.googleapis.com/chrome-for-testing-public/113.0.5672.63/ubuntu64/chrome-ubuntu64.zip',
+        join_paths(__DIR__, 'tmp', 'chrome-ubuntu.zip')
+    );
+})->throws(Exception::class, 'Unable to download from [https://storage.googleapis.com/chrome-for-testing-public/113.0.5672.63/ubuntu64/chrome-ubuntu64.zip]');
