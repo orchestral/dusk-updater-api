@@ -20,7 +20,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Orchestra\\DuskUpdaterApi\\Tests\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "require": {
@@ -34,11 +34,14 @@
     },
     "require-dev": {
         "laravel/pint": "^1.4",
-        "phpstan/phpstan": "^2.1",
-        "phpunit/phpunit": "^9.6"
+        "pestphp/pest": "^1.0|^2.0|^3.0",
+        "phpstan/phpstan": "^2.1"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "scripts": {
         "lint": [
