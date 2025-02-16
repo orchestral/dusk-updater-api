@@ -119,6 +119,8 @@ class OperatingSystem
 
     /**
      * Returns the current OS identifier.
+     *
+     * @codeCoverageIgnore
      */
     public static function id(): string
     {
@@ -133,6 +135,8 @@ class OperatingSystem
 
     /**
      * Determine if the operating system is Windows or Windows Subsystem for Linux.
+     *
+     * @codeCoverageIgnore
      */
     public static function onWindows(): bool
     {
@@ -145,6 +149,8 @@ class OperatingSystem
 
     /**
      * Determine if the operating system is macOS.
+     *
+     * @codeCoverageIgnore
      */
     public static function onMac(): bool
     {
@@ -153,6 +159,8 @@ class OperatingSystem
 
     /**
      * Mac platform architecture ID.
+     *
+     * @codeCoverageIgnore
      */
     public static function macArchitectureId(): string
     {
