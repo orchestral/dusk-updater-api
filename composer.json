@@ -29,7 +29,6 @@
         "composer-runtime-api": "^2.2",
         "guzzlehttp/guzzle": "^7.2",
         "symfony/polyfill-ctype": "^1.9",
-        "symfony/polyfill-php83": "^1.31",
         "symfony/process": "^6.0 || ^7.0"
     },
     "require-dev": {
