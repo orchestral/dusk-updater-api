@@ -69,4 +69,3 @@ it('can get previous version (70-114)', function (int $given, string $version) {
     [100, '100'],
     [114, '114'],
 ]);
-
