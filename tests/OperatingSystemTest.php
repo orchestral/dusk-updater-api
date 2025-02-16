@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\DuskUpdaterApi\Tests\Unit;
+namespace Orchestra\DuskUpdaterApi\Tests;
 
 use Orchestra\DuskUpdaterApi\OperatingSystem;
 use PHPUnit\Framework\TestCase;

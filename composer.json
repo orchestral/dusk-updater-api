@@ -16,10 +16,7 @@
     "autoload": {
         "psr-4": {
             "Orchestra\\DuskUpdaterApi\\": "src/"
-        },
-        "files": [
-            "src/functions.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
