@@ -6,9 +6,3 @@
 /coverage/*
 /.phpunit.cache/*
 /.phpunit.result.cache
-
-# IDE
-/.idea
-/.nova
-/.vscode
-/.zed
