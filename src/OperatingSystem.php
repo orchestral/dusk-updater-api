@@ -87,10 +87,8 @@ class OperatingSystem
 
     /**
      * Resolve ChromeDriver slug.
-     *
-     * @param  string|null  $version
      */
-    public static function chromeDriverSlug(string $operatingSystem, $version = null): string
+    public static function chromeDriverSlug(string $operatingSystem, ?string $version = null): string
     {
         $slug = static::$platforms[$operatingSystem]['slug'] ?? null;
 
