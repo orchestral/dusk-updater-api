@@ -9,9 +9,12 @@ use GuzzleHttp\Psr7\Utils;
 class HttpClient
 {
     /**
-     * The HTTP Client implementation.
+     * HTTP Client implementation.
+     *
+     * @var \GuzzleHttp\Client|null
      */
-    public Client
+    public static $instance;
+
     /**
      * HTTP Proxy configuration.
      */
@@ -22,23 +25,18 @@ class HttpClient
      */
     public static bool $verifySsl = true;
 
-    public function __construct(
-        public ?Client $client = new Client,
-    ) {
-
-
-    }
-
     /**
      * Download from URL.
      *
      * @throws \Exception
      */
-    public function download(string $url, string $destination): void
+    public static function download(string $url, string $destination): void
     {
+        $client = static::$instance ?? new Client;
+
         $resource = Utils::tryFopen($destination, 'w');
 
-        $response = $this->client->get($url, array_merge([
+        $response = $client->get($url, array_merge([
             'sink' => $resource,
             'verify' => static::$verifySsl,
         ], array_filter([
@@ -55,9 +53,11 @@ class HttpClient
      *
      * @throws \Exception
      */
-    public function fetch(string $url): string
+    public static function fetch(string $url): string
     {
-        $response = $this->client->get($url, array_merge([
+        $client = static::$instance ?? new Client;
+
+        $response = $client->get($url, array_merge([
             'verify' => static::$verifySsl,
         ], array_filter([
             'proxy' => static::$proxy,
@@ -70,8 +70,13 @@ class HttpClient
         return (string) $response->getBody();
     }
 
-    public static function __callStatic(string $method, array $parameters)
+    /**
+     * Flush current state to default.
+     */
+    public static function flushState(): void
     {
-        return call_user_func(new static, $method, ...$parameters);
+        static::$instance = null;
+        static::$proxy = null;
+        static::$verifySsl = true;
     }
 }
