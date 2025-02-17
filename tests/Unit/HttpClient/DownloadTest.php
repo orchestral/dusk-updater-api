@@ -5,7 +5,7 @@ use GuzzleHttp\Psr7\Response;
 use Mockery as m;
 use Orchestra\DuskUpdaterApi\HttpClient;
 
-use function Orchestra\DuskUpdaterApi\join_paths;
+use function Orchestra\Sidekick\join_paths;
 
 beforeEach(function () {
     HttpClient::$instance = m::mock(Client::class);

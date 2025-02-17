@@ -6,6 +6,8 @@ use Exception;
 use InvalidArgumentException;
 use Symfony\Component\Process\Process;
 
+use function Orchestra\Sidekick\join_paths;
+
 class ChromeVersionFinder
 {
     /**
