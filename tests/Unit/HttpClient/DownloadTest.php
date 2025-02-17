@@ -29,7 +29,6 @@ it('can download a file', function () {
     $this->assertFileExists($file);
 });
 
-
 it('cannot download an invalid file', function () {
     HttpClient::$instance->shouldReceive('get')
         ->with('https://storage.googleapis.com/chrome-for-testing-public/113.0.5672.63/ubuntu64/chrome-ubuntu64.zip', m::type('Array'))
