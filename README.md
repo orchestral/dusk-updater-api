@@ -6,3 +6,5 @@ Updater API for Laravel Dusk ChromeDriver binaries
 [![Total Downloads](https://poser.pugx.org/orchestra/dusk-updater-api/downloads)](https://packagist.org/packages/orchestra/dusk-updater-api)
 [![Latest Unstable Version](https://poser.pugx.org/orchestra/dusk-updater-api/v/unstable)](//packagist.org/packages/orchestra/dusk-updater-api)
 [![License](https://poser.pugx.org/orchestra/dusk-updater-api/license)](https://packagist.org/packages/orchestra/dusk-updater-api)
+
+`orchestra/dusk-updater-api` package provide a standardise API to fetch and download ChromeDriver binaries for Laravel Dusk.
