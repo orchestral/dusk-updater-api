@@ -6,7 +6,7 @@ use Mockery as m;
 use Orchestra\DuskUpdaterApi\ChromeVersionFinder;
 use Orchestra\DuskUpdaterApi\HttpClient;
 
-use function Orchestra\DuskUpdaterApi\join_paths;
+use function Orchestra\Sidekick\join_paths;
 
 beforeEach(function () {
     $client = m::mock(Client::class);
