@@ -92,7 +92,9 @@ class ChromeVersionFinder
     /**
      * Detect the installed Chrome/Chromium version.
      *
-     * @return array<string, mixed>
+     * @return array{full: string, semver: string, major: int, minor: int, patch: int}
+     *
+     * @throws \InvalidArgumentException
      *
      * @codeCoverageIgnore
      */
@@ -141,11 +143,13 @@ class ChromeVersionFinder
     /**
      * Detect the installed ChromeDriver version.
      *
-     * @return array<string, mixed>|null
+     * @return array{full: string|null, semver: string|null, major: int|null, minor: int|null, patch: int|null}
+     *
+     * @throws \InvalidArgumentException
      *
      * @codeCoverageIgnore
      */
-    public function installedChromeDriverVersion(string $operatingSystem, string $directory): ?array
+    public function installedChromeDriverVersion(string $operatingSystem, string $directory): array
     {
         $filename = OperatingSystem::chromeDriverBinary($operatingSystem);
 
