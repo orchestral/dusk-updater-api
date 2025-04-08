@@ -123,7 +123,7 @@ class ChromeVersionFinder
                 continue;
             }
 
-            /** @var array{0: string, 1: string, 2: string, 3: string} $matches */
+            /** @var array{0: non-falsy-string, 1: numeric-string, 2: numeric-string, 3: numeric-string} $matches */
             $semver = implode('.', [$matches[1], $matches[2], $matches[3]]);
 
             return [
