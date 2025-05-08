@@ -4,12 +4,23 @@ namespace Orchestra\DuskUpdaterApi;
 
 use InvalidArgumentException;
 
+/**
+ * @phpstan-type TPlatformData array{slug: string, binary: string, commands: array<int, string>}
+ */
 class OperatingSystem
 {
     /**
      * List of available Operating System platforms.
      *
      * @var array<string, array{slug: string, binary: string, commands: array<int, string>}>
+     *
+     * @phpstan-var array{
+     *   linux: TPlatformData,
+     *   mac: TPlatformData,
+     *   mac-intel: TPlatformData,
+     *   mac-arm: TPlatformData,
+     *   win: TPlatformData,
+     * }
      */
     protected static array $platforms = [
         'linux' => [
@@ -59,6 +70,8 @@ class OperatingSystem
      * Resolve Chrome version commands.
      *
      * @return array<int, string>
+     *
+     * @throws \InvalidArgumentException
      */
     public static function chromeVersionCommands(string $operatingSystem): array
     {
@@ -73,6 +86,8 @@ class OperatingSystem
 
     /**
      * Resolve ChromeDriver binary.
+     *
+     * @throws \InvalidArgumentException
      */
     public static function chromeDriverBinary(string $operatingSystem): string
     {
@@ -87,6 +102,8 @@ class OperatingSystem
 
     /**
      * Resolve ChromeDriver slug.
+     *
+     * @throws \InvalidArgumentException
      */
     public static function chromeDriverSlug(string $operatingSystem, ?string $version = null): string
     {
