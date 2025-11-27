@@ -26,7 +26,7 @@ jobs:
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
+    name: Pest:4 / PHP:${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
 
     steps:
       - name: Checkout code
@@ -71,7 +71,7 @@ jobs:
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
+    name: Pest:3 / PHP:${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
 
     steps:
       - name: Checkout code
@@ -114,7 +114,7 @@ jobs:
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
+    name: Pest:2 / PHP:${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
 
     steps:
       - name: Checkout code
@@ -157,7 +157,7 @@ jobs:
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
+    name: Pest:1 / PHP:${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
 
     steps:
       - name: Checkout code
