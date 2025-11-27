@@ -40,10 +40,13 @@
         "phpstan/phpstan": "^2.1.14"
     },
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
-        }
+        },
+        "audit": {
+            "block-insecure": false
+        },
+        "sort-packages": true
     },
     "scripts": {
         "lint": [
