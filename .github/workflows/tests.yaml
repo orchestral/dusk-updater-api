@@ -26,6 +26,9 @@ jobs:
           - "lowest"
         experimental:
           - false
+        exclude:
+          - php: 8.5
+            dependencies: "lowest"
 
     name: PHP${{ matrix.php }} / OS:${{ matrix.os }} ${{ matrix.dependencies == 'highest' && '⬆️' || '⬇️' }}
 
