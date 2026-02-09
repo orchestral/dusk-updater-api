@@ -141,13 +141,11 @@ class OperatingSystem
      */
     public static function id(): string
     {
-        if (static::onWindows()) {
-            return 'win';
-        } elseif (static::onMac()) {
-            return static::macArchitectureId();
-        }
-
-        return 'linux';
+        return match (true) {
+            static::onWindows() => 'win',
+            static::onMac() => static::macArchitectureId(),
+            default => 'linux',
+        };
     }
 
     /**
