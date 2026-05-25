@@ -170,6 +170,7 @@ class ChromeVersionFinder
 
         if ($process->getExitCode() == 0) {
             if (preg_match('/ChromeDriver\s(\d+)\.(\d+)\.(\d+)(\.\d+)?\s[\w\D]+/', $process->getOutput(), $matches) !== false) {
+                /** @var array{0: non-falsy-string, 1: numeric-string, 2: numeric-string, 3: numeric-string} $matches */
                 $semver = implode('.', [$matches[1], $matches[2], $matches[3]]);
 
                 return [
