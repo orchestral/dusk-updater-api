@@ -9,6 +9,7 @@ it('matches possible os', function () {
 it('has correct os', function () {
     $this->assertSame([
         'linux',
+        'linux-arm',
         'mac',
         'mac-intel',
         'mac-arm',
