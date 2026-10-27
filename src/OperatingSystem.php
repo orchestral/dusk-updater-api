@@ -33,6 +33,16 @@ class OperatingSystem
                 '/usr/bin/google-chrome-stable --version',
             ],
         ],
+        'linux-arm' => [
+            'slug' => 'linux-arm64',
+            'binary' => 'chromedriver-linux-arm',
+            'commands' => [
+                '/usr/bin/google-chrome --version',
+                '/usr/bin/chromium-browser --version',
+                '/usr/bin/chromium --version',
+                '/usr/bin/google-chrome-stable --version',
+            ],
+        ],
         'mac' => [
             'slug' => 'mac-x64',
             'binary' => 'chromedriver-mac',
@@ -144,7 +154,8 @@ class OperatingSystem
         return match (true) {
             static::onWindows() => 'win',
             static::onMac() => static::macArchitectureId(),
-            default => 'linux',
+            static::onLinux() => static::linuxArchitectureId(),
+            default => static::linuxArchitectureId(),
         };
     }
 
@@ -173,6 +184,16 @@ class OperatingSystem
     }
 
     /**
+     * Determine if the operating system is Linux.
+     *
+     * @codeCoverageIgnore
+     */
+    public static function onLinux(): bool
+    {
+        return \defined('PHP_OS_FAMILY') ? PHP_OS_FAMILY === 'Linux' : PHP_OS === 'Linux';
+    }
+
+    /**
      * Mac platform architecture ID.
      *
      * @codeCoverageIgnore
@@ -183,6 +204,20 @@ class OperatingSystem
             'arm64' => 'mac-arm',
             'x86_64' => 'mac-intel',
             default => 'mac',
+        };
+    }
+
+    /**
+     * Linux platform architecture ID.
+     *
+     * @codeCoverageIgnore
+     */
+    public static function linuxArchitectureId(): string
+    {
+        return match (php_uname('m')) {
+            'aarch64', 'arm64' => 'linux-arm',
+            'x86_64' => 'linux',
+            default => 'linux',
         };
     }
 }
