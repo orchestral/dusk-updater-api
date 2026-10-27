@@ -206,6 +206,7 @@ class OperatingSystem
             default => 'mac',
         };
     }
+
     /**
      * Linux platform architecture ID.
      *
